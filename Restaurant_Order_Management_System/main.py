@@ -13,7 +13,7 @@ from View.settings_view import SettingsView
 
 class EmptyWindow(QWidget):
 
-    def __init__(self):#
+    def __init__(self):
         super().__init__()
         self.startUI()
         
