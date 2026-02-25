@@ -277,14 +277,22 @@ class OrderManagementView(QWidget):
         order = self.controller.get_active_order()
         if not order or order.status == new_status:
             return
-        # Change the order status based on dropdown
+        # In the CRUD "Edit Registry" modal we must not trigger the full
+        # close-order workflow (which persists/removes the ticket from the view).
+        # Instead, treat the dropdown as a simple field edit and let the modal
+        # "Save changes" button persist it.
+        if not self.show_orders_panel:
+            order.set_status(new_status)
+            self.update_ticket_management_visibility()
+            self.apply_order_edit_mode()
+            return
+
+        # Full order-management mode behavior
         if new_status == "Closed":
             self.close_order_button_clicked()
         elif new_status == "In progress":
             self.change_status_button_clicked()
-        # "New" is transition from other states
         elif new_status == "New":
-            # Toggle to New if currently In progress
             if order.status == "In progress":
                 self.change_status_button_clicked()
 
