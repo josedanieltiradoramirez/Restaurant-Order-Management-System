@@ -36,7 +36,7 @@ class DishCard(QWidget):
         status_label.setFont(QFont("Segoe UI", 9))
         status_label.setStyleSheet("color: #6b7280;")
         #-------------- TOTAL / STATUS --------------
-        total_label = QLabel(f"Total: {self.dish.total_amount}")
+        total_label = QLabel(f"Total: ${float(self.dish.total_amount):.2f}")
         total_label.setFont(QFont("Segoe UI", 9))
         total_label.setStyleSheet("color: #6b7280;")
         self.to_go_checkbox = QCheckBox("")

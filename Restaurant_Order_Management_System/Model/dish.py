@@ -14,7 +14,6 @@ class Dish():
 
 
     def remove_product(self, product_name):
-        print(product_name)
         del self.products[product_name]
         self.total()
 

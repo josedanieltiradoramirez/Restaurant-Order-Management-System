@@ -158,10 +158,10 @@ class OrderManagementView(QWidget):
         self.cash_row_widget = QWidget()
         cash_row_layout = QHBoxLayout(self.cash_row_widget)
         cash_row_layout.setContentsMargins(0, 0, 0, 0)
-        cash_row_layout.addWidget(QLabel("Cash: "))
+        cash_row_layout.addWidget(QLabel("Cash: $"))
         cash_row_layout.addWidget(self.order_form_amount_paid)
 
-        self.change_label = QLabel("Change: 0.00")
+        self.change_label = QLabel("Change: $0.00")
         self.change_label.setFont(QFont("Segoe UI", 9))
         self.change_label.setStyleSheet("color: #6b7280;")
         self.update_active_order_total_label()
@@ -638,21 +638,21 @@ class OrderManagementView(QWidget):
     def update_active_dish_total_label(self):
         dish = self.controller.get_active_dish()
         if dish:
-            self.active_dish_total_label.setText(f"TOTAL: {dish.total_amount}")
+            self.active_dish_total_label.setText(f"TOTAL: ${dish.total_amount}")
             self.active_dish_total_label.show()
         else:
-            self.active_dish_total_label.setText("TOTAL: 0")
+            self.active_dish_total_label.setText("TOTAL: $0")
             self.active_dish_total_label.hide()
     
     def update_active_order_total_label(self):
         order = self.controller.get_active_order()
         if order:
-            self.active_order_total_label.setText(f"TOTAL: {order.total_amount}")
+            self.active_order_total_label.setText(f"TOTAL: ${order.total_amount}")
             self.active_order_total_label.show()
             self.cash_row_widget.show()
             self.change_label.show()
         else:
-            self.active_order_total_label.setText("TOTAL: 0")
+            self.active_order_total_label.setText("TOTAL: $0")
             self.active_order_total_label.hide()
             self.cash_row_widget.hide()
             self.change_label.hide()
@@ -958,7 +958,7 @@ class OrderManagementView(QWidget):
     def update_change_label(self):
         order = self.controller.get_active_order()
         if not order:
-            self.change_label.setText("Change: 0.00")
+            self.change_label.setText("Change: $0.00")
             return
         amount_paid_text = self.order_form_amount_paid.text().strip()
         try:
@@ -966,7 +966,7 @@ class OrderManagementView(QWidget):
         except ValueError:
             amount_paid = 0.0
         change = max(amount_paid - float(order.total_amount), 0.0)
-        self.change_label.setText(f"Change: {change:.2f}")
+        self.change_label.setText(f"Change: ${change:.2f}")
 
     def order_to_go_toggled(self, checked):
         if self._loading_order_form:

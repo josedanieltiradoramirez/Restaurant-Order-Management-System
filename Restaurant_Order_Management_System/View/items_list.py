@@ -26,14 +26,9 @@ class ItemsList(QWidget):
 
     
     def remove_item(self, item_id:str):
-        #item = self.items.get(item_id)
-        #print(item_id)
-
         widget = self.items.pop(item_id, None)
         if not widget:
-            print("Not item")
             return
-        print("item")
         self.layout.removeWidget(widget)
 
         widget.deleteLater()

@@ -49,7 +49,7 @@ class OrderElementCard(QWidget):
         self.price_label = QLabel(f"${self.product.price}")
         self.price_label.setFont(QFont("Segoe UI", 9, QFont.Weight.DemiBold))
         self.price_label.setStyleSheet("color: #111827;")
-        self.price_prefix_label = QLabel("Precio:")
+        self.price_prefix_label = QLabel("Price:")
         self.price_prefix_label.setFont(QFont("Segoe UI", 9))
         self.price_prefix_label.setStyleSheet("color: #6b7280;")
         self.price_input = QLineEdit()
@@ -60,7 +60,7 @@ class OrderElementCard(QWidget):
             "color: #111827;"
         )
 
-        self.quantity_label = QLabel("Cantidad:")
+        self.quantity_label = QLabel("Quantity:")
         self.quantity_label.setFont(QFont("Segoe UI", 9))
         self.quantity_label.setStyleSheet("color: #6b7280;")
 
@@ -104,7 +104,7 @@ class OrderElementCard(QWidget):
 
         # -------- NOTES ROW --------
         self.notes_input = QLineEdit()
-        self.notes_input.setPlaceholderText("Notas")
+        self.notes_input.setPlaceholderText("Notes")
         self.notes_input.textChanged.connect(self.on_notes_changed)
 
         shortcuts = list(self.product.notes_shortcuts or [])
