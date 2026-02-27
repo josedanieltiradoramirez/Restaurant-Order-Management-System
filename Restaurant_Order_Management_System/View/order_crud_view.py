@@ -1001,6 +1001,19 @@ class OrderCrudView(QWidget):
         main_layout = QVBoxLayout()
         main_layout.addWidget(tabs)
         self.setLayout(main_layout)
+
+    def showEvent(self, event):
+        super().showEvent(event)
+        # Refresh data each time the view is shown to keep the calendar in sync
+        # with orders created elsewhere in the app.
+        try:
+            self.controller.refresh_table()
+        except Exception:
+            pass
+        try:
+            self.load_calendar_revenue()
+        except Exception:
+            pass
  
     def button_add_registry_clicked(self):
         self.open_new_ticket_modal()
@@ -1772,5 +1785,3 @@ class OrderCrudView(QWidget):
         #layout.addWidget(tittle)
 
         #self.setLayout(layout)
-
-
