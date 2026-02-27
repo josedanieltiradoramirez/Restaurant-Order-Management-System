@@ -16,21 +16,21 @@ This application allows restaurants to manage orders, products, tables, and tick
 
 ---
 ## Order Management
-![Order management](<Captura de pantalla 2026-02-25 183718.png>)
-![Order creation](<Captura de pantalla 2026-02-26 213823-1.png>)
-![Change status](<Captura de pantalla 2026-02-26 213852.png>)
-![Ticket preview](<Captura de pantalla 2026-02-26 213926.png>)
+![Order management](<Assets/Captura de pantalla 2026-02-25 183718.png>)
+![Order creation](<Assets/Captura de pantalla 2026-02-26 213823.png>)
+![Change status](<Assets/Captura de pantalla 2026-02-26 213852.png>)
+![Ticket preview](<Assets/Captura de pantalla 2026-02-26 213926.png>)
 From this window, users can create new orders, update their status, print tickets, and close completed orders.
 
 ## Order Database
-![Order Database view](<Captura de pantalla 2026-02-26 214043.png>)
+![Order Database view](<Assets/Captura de pantalla 2026-02-26 214043.png>)
 This section allows users to edit, delete, and manage order records stored in the database.
 
 ### Calendar
-![Calendar view](<Captura de pantalla 2026-02-26 214148.png>)
+![Calendar view](<Assets/Captura de pantalla 2026-02-26 214148.png>)
 Provides a daily summary of orders and key business information.
 
 ## Settings
-![Menu settings](<Captura de pantalla 2026-02-26 214202.png>)
-![Tables settings](<Captura de pantalla 2026-02-26 214229.png>)
+![Menu settings](<Assets/Captura de pantalla 2026-02-26 214202.png>)
+![Tables settings](<Assets/Captura de pantalla 2026-02-26 214229.png>)
 Manage menu items and table configurations from the settings panel.
