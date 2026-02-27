@@ -5,7 +5,7 @@ This application allows restaurants to manage orders, products, tables, and tick
 
 ---
 
-## 🚀 Features
+## Features
 
 - Create, update, and close orders
 - Change order status in real time
